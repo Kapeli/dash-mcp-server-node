@@ -1,0 +1,49 @@
+{
+    "manifest_version": "0.2",
+    "name": "dash-mcp-server",
+    "version": "1.1.0",
+    "display_name": "Dash",
+    "description": "Search and browse documentation from Dash, the macOS API documentation browser.",
+    "long_description": "Access your Dash documentation library directly from Claude. List installed docsets, search across documentation and code snippets, load full documentation pages, and enable full-text search for specific docsets. Dash supports 200+ docsets including Swift, Python, JavaScript, TypeScript, React, Node.js, Ruby, Go, Rust, Java, C++, Django, Ruby on Rails, PostgreSQL, Docker, and many more.",
+    "author": {
+        "name": "Kapeli",
+        "url": "https://github.com/Kapeli"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Kapeli/dash-mcp-server-node"
+    },
+    "homepage": "https://kapeli.com/dash",
+    "license": "MIT",
+    "keywords": ["dash", "documentation", "docsets", "api", "reference"],
+    "icon": "icon.png",
+    "server": {
+        "type": "node",
+        "entry_point": "server/index.js",
+        "mcp_config": {
+            "command": "node",
+            "args": ["${__dirname}/server/index.js"]
+        }
+    },
+    "tools": [
+        {
+            "name": "list_installed_docsets",
+            "description": "List all installed documentation sets in Dash."
+        },
+        {
+            "name": "search_documentation",
+            "description": "Search for documentation across docsets and code snippets."
+        },
+        {
+            "name": "load_documentation_page",
+            "description": "Load a documentation page from a search result URL."
+        },
+        {
+            "name": "enable_docset_fts",
+            "description": "Enable full-text search for a specific docset."
+        }
+    ],
+    "compatibility": {
+        "platforms": ["darwin"]
+    }
+}
